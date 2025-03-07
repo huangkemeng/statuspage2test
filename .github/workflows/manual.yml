@@ -1,0 +1,14 @@
+name: manual health check
+
+on:
+  workflow_dispatch:
+
+jobs:
+  health_check_job:
+    runs-on: ubuntu-latest
+    name: Check all sites
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run Shell Script
+        id: manual_shell_script_run
+        run: bash ./health-check.sh
